@@ -11,6 +11,17 @@
         @media screen and (max-width: 600px) {
             body {
                 background-color: lightgrey;
+            }
+
+            #calculate_btn,
+            #showAns_btn {
+                border: none;
+                background: blueviolet;
+                padding: 10px 15px;
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 5px;
 
             }
         }
@@ -42,8 +53,8 @@
     <hr>
     <h3 id="question" style="text-align: center;"> 89 / 4 = ? </h3>
     <h3 id="answer" style="text-align: center;"> &nbsp;</h3>
-    <button onclick="calculate()">Refresh</button>
-    <button onclick="showAns()">Show Answer</button>
+    <button id="calculate_btn" onclick="calculate()">Refresh</button>
+    <button id="showAns_btn" onclick="showAns()">Show Answer</button>
 </body>
 
 <script>

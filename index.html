@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quick Maths</title>
+
+    <style>
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: lightgrey;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Quick Maths</h2>
+    1st Number : <select id="digit_first_number">
+        <option value="10">1 Digit</option>
+        <option value="100">2 Digit</option>
+        <option value="1000">3 Digit</option>
+        <option value="10000">4 Digit</option>
+    </select>
+    <br> <br>
+    2nd Number : <select id="second_first_number">
+        <option value="10">1 Digit</option>
+        <option value="100">2 Digit</option>
+        <option value="1000">3 Digit</option>
+        <option value="10000">4 Digit</option>
+    </select>
+    <br> <br>
+    Operation: <select id="Operation">
+        <option value="+">Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
+    </select>
+    <hr>
+    <h3 id="question" style="text-align: center;"> 89 / 4 = ? </h3>
+    <h3 id="answer" style="text-align: center;"> &nbsp;</h3>
+    <button onclick="calculate()">Refresh</button>
+    <button onclick="showAns()">Show Answer</button>
+</body>
+
+<script>
+    function calculate() {
+
+        var num1_digit = document.getElementById('digit_first_number').value;
+        var num2_digit = document.getElementById('second_first_number').value;
+
+        var num1 = Math.floor(Math.random() * num1_digit);
+        var num2 = Math.floor(Math.random() * num2_digit);
+
+        var Operation = document.getElementById('Operation').value;
+
+        document.getElementById('question').innerHTML = num1 + " " + Operation + " " + num2;
+
+        var answer;
+
+        if (Operation == "+") {
+            answer = num1 + num2;
+        }
+
+        if (Operation == "-") {
+            answer = num1 - num2;
+        }
+
+        if (Operation == "*") {
+            answer = num1 * num2;
+        }
+
+        if (Operation == "/") {
+            answer = num1 / num2;
+        }
+
+        document.getElementById('answer').innerHTML = "Answer: " + answer;
+        document.getElementById('answer').style.visibility = "hidden";
+
+    }
+
+    function showAns() {
+        document.getElementById('answer').style.visibility = "visible";
+    }
+</script>
+
+</html>
